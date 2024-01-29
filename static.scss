@@ -1,0 +1,32 @@
+@use "reset";
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    #background {
+        background-image: url("./static.gif");
+        filter: brightness(34%);
+        min-height: 100vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #text {
+        display: flex;
+        justify-content: center;
+        z-index: 4;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h1 {
+            font-family: monospace;
+            font-size: 8rem;
+            color: white;
+        }
+    }
+
+}

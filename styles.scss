@@ -1,0 +1,724 @@
+@use "reset" as *;
+@use "mixins" as m;
+@use "colors" as c;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    // background: c.$black-primary;
+    // background: c.$black-primary;
+    // @include m.glitch;
+}
+
+header, main, footer {
+    // padding: 0.8% 13%;
+    // font-family: monospace;
+    font-family: "Prompt";
+    // @include m.troubleshoot;
+}
+
+#header {
+    width: 100%;
+
+    // navbar
+    #nav-wrapper {
+        padding: 0 15%;
+        background: c.$black-primary;
+        z-index: 10;
+        width: 100%;
+        position: fixed;
+        @include m.flex(false, false, space-between, center);
+        box-shadow: rgba(14, 15, 18, 0.4) 0px 5px, rgba(14, 15, 18, 0.3) 0px 10px, rgba(14, 15, 18, 0.2) 0px 15px, rgba(14, 15, 18, 0.1) 0px 20px, rgba(14, 15, 18, 0.0) 0px 25px;
+        @include m.glitch;
+
+        a {
+            text-decoration: none;
+
+            #doom-icon {
+                font-size: 2.8rem;
+            }
+        }
+
+        #nav-bar {
+            padding: 0.8% 0;
+            height: 4rem;
+            @include m.flex(false, false, flex-end, center);
+
+            ul {
+                @include m.flex(false, false, space-between, center);
+                @include m.link-animation;
+                gap: 2rem;
+
+                .nav-link {
+                    font-size: 1rem;
+                    color: c.$white-primary;
+                }
+            }
+        }
+    }
+
+    // hero section
+    #hero-section {
+        height: 100%;
+
+        #header-img {
+            background-image: url("./hero-header.png");
+            filter: brightness(34%);
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        #hero-text {
+            padding: 0 15%;
+            width: 100%;
+            @include m.flex(column, false, center, center);
+            // needed or else the filter on #hero-img also applies to the text
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            text-align: center;
+
+            h1 {
+                font-size: 7rem;
+                font-weight: 500;
+                color: c.$white-primary;
+                padding-bottom: 1.4rem;
+
+                span {
+                    display: inline;
+                    color: c.$violet-secondary;
+                }
+            }
+
+            p {
+                font-size: 2rem;
+                font-weight: 400;
+                color: c.$white-secondary;
+                padding-bottom: 8rem;
+
+                #doom-emacs {
+                    display: inline;
+                    color: c.$violet-secondary;
+                }
+
+                .cursor {
+                    display: inline;
+                }
+            }
+
+            .button {
+                color: c.$white-primary;
+                font-size: 1.4rem;
+                border: 0.2rem solid c.$violet-secondary;
+                border-radius: 32px;
+                padding: 0.3rem 20px;
+                transition: all 0.3s ease-in-out;
+                text-align: center;
+                overflow: hidden;
+                position: relative;
+                height: 3.4rem;
+                width: 14rem;
+                cursor: pointer;
+                box-shadow: rgba(101, 76, 163, 0.4) 0px 5px, rgba(101, 76, 163, 0.3) 0px 10px, rgba(101, 76, 163, 0.2) 0px 15px, rgba(101, 76, 163, 0.1) 0px 20px, rgba(101, 76, 163, 0.0) 0px 25px;
+            }
+            @include m.button-animation;
+        }
+    }
+
+    @media only screen and (max-width: 1414px) {
+        #hero-text {
+            h1, p {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: 4rem !important;
+            }
+
+            p {
+                font-size: 1.3rem !important;
+                padding-bottom: 5rem !important;
+            }
+
+            button {
+                height: 3rem !important;
+                font-size: 1.3rem !important;
+                width: 10rem !important;
+            }
+        }
+
+        #nav-wrapper {
+            padding: 0.5rem 0;
+            position: fixed;
+            @include m.flex(false, false, center, center);
+
+            #nav-bar {
+                display: none !important;
+            }
+        }
+    }
+}
+
+#main {
+    @include m.flex(column, false, false, center);
+    padding: 4rem 0;
+    background: linear-gradient(158deg, c.$black-primary 14%, #191b20 100%);
+    // background: linear-gradient(158deg, c.$black-primary 14%, c.$black-secondary 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #design-section {
+        height: 100%;
+        // padding: 4rem 15%;
+        padding-top: 10rem;
+        padding-bottom: 4rem;
+        padding-left: 15%;
+        padding-right: 15%;
+        @include m.flex(column, false, center, center);
+        // @include m.troubleshoot;
+
+        #grid-description {
+            @include m.flex(column, false, center, space-between);
+            // @include m.troubleshoot;
+            text-align: center;
+            padding: 2rem 0;
+
+            h2 {
+                color: c.$white-primary;
+                font-size: 3rem;
+                font-weight: 400;
+                padding-bottom: 1rem;
+                line-height: 3rem;
+            }
+
+            .primary-description {
+                color: c.$white-secondary;
+                font-size: 1.2rem;
+                font-weight: 300;
+                line-height: 1.8rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .button-container {
+                @include m.flex(false, false, center, false);
+                gap: 2rem;
+                @include m.button-animation;
+
+                .button {
+                    justify-self: flex-end;
+                    color: c.$white-primary;
+                    font-size: 1rem;
+                    border: 2px solid c.$violet-secondary;
+                    border-radius: 20px;
+                    padding: 2px 20px;
+                    transition: all 0.3s ease-in-out;
+                    text-align: center;
+                    overflow: hidden;
+                    position: relative;
+                    height: 2.2rem;
+                    width: 11rem;
+                    cursor: pointer;
+                    box-shadow: rgba(101, 76, 163, 0.4) 0px 5px, rgba(101, 76, 163, 0.3) 0px 10px, rgba(101, 76, 163, 0.2) 0px 15px, rgba(101, 76, 163, 0.1) 0px 20px, rgba(101, 76, 163, 0.0) 0px 25px;
+                }
+            }
+        }
+
+        #grid-container {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0.5rem;
+
+            .grid {
+                width: 100%;
+                height: 100%;
+                padding: 1px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 1rem;
+                box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            }
+
+            .grid:hover {
+                // for animated border
+                background: linear-gradient(0deg, rgba(22, 4, 8, 0.5), rgba(22, 4, 8, 0.5)),
+                            linear-gradient(100.41deg, c.$violet-text 0.52%, c.$violet-secondary 100.52%);
+                @include m.glitch;
+            }
+
+            .grid-content {
+                height: 100%;
+                width: 100%;
+                padding: 2rem 2rem;
+                background: #1D2026;
+                border-radius: 1rem;
+                position: relative;
+                z-index: 1;
+
+                h3 {
+                    color: c.$white-primary;
+                }
+
+                p {
+                    color: c.$white-secondary;
+                }
+            }
+
+            .empty-grid {
+                color: #1D2026;
+                --ggs: 10;
+                box-shadow: none;
+            }
+
+            .empty-grid:hover {
+                color: #101114;
+                --ggs: 10;
+            }
+
+            .small {
+                @include m.flex(column, false, center, center);
+                text-align: center;
+
+                .design-img {
+                    width: 100%;
+                    color: c.$violet-secondary;
+                    --ggs: 1.5;
+                    padding-bottom: 1rem;
+                    @include m.flex(false, false, center, center);
+                }
+
+                .design-mantra {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    padding-bottom: 0.7rem;
+                }
+
+                .design-description {
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    line-height: 1.4rem;
+                }
+
+                code {
+                    font-size: 0.9rem;
+                    font-family: monospace;
+
+                    color: c.$black-secondary;
+                    background-color: c.$violet-secondary;
+                }
+            }
+
+            .big  {
+                grid-row: 1 / 3;
+                grid-column: 1 / 3;
+
+                .grid-content {
+                    @include m.flex(column, false, flex-end, flex-start);
+
+                    .design-img {
+                        @include m.flex(false, false, flex-end, center);
+                        margin-bottom: 5rem; // temporary fix
+                        width: 100%;
+                        font-size: 4rem;
+                        color: c.$violet-secondary;
+                    }
+
+                    .design-mantra {
+                        width: 80%;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        padding-bottom: 2rem;
+                    }
+
+                    .design-description {
+                        width: 100%;
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+
+            .mid {
+                grid-row: 3 / 4;
+                grid-column: 3 / 5;
+
+                .grid-content {
+                    @include m.flex(row-reverse, false, space-between, center);
+
+                    .design-img {
+                        @include m.flex(false, false, flex-end, center);
+                        padding: 0 10%;
+                        color: c.$violet-secondary;
+                        --ggs: 5;
+                    }
+
+                    .text-wrapper {
+                        @include m.flex(column, false, center, flex-start);
+
+                        .design-mantra {
+                            font-size: 1.6rem;
+                            font-weight: 400;
+                            padding-bottom: 2rem;
+                        }
+
+                        .design-description {
+                            font-size: 1.1rem;
+                            font-weight: 400;
+                            line-height: 1.5rem;
+                        }
+
+                        span {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // features
+    #features-section {
+        padding: 4rem 15%;
+        width: 100%;
+        height: 100%;
+        @include m.flex(column, false, flex-start, center);
+        // gap: 1rem;
+        // @include m.troubleshoot;
+
+        .section-wrapper-a {
+            padding: 4rem 0;
+            @include m.flex(row-reverse, false, space-between, center);
+            width: 100%;
+            gap: 5rem;
+            // @include m.troubleshoot;
+
+            .features-left {
+                @include m.flex(column, false, flex-start, center);
+
+
+                .features-nav {
+                    width: 100%;
+                    @include m.flex(false, false, flex-start, center);
+
+                    ul {
+                        height: 100%;
+                        width: 100%;
+                        padding-bottom: 1.5rem;
+                        @include m.flex(false, false, flex-start, center);
+                        gap: 0.5rem;
+
+
+                        button {
+                            padding: 0.2rem 1rem;
+                            background: transparent;
+                            border-color: c.$violet-secondary;
+                            border-width: 0.05rem;
+                            color: c.$white-secondary;
+                            border-radius: 1rem;
+                            cursor: pointer;
+                            font-family: "prompt";
+                        }
+
+                        #demo {
+                            background: c.$violet-secondary;
+                            color: c.$white-primary;
+                        }
+                    }
+                }
+
+                .features-images {
+                    // @include m.troubleshoot;
+                    // width: 100%;
+
+                    height: 30rem;
+                    max-width: 45rem;
+                    overflow: hidden;
+                    border-radius: 1rem;
+                    box-shadow: rgba(101, 76, 163, 0.4) 5px 5px, rgba(101, 76, 163, 0.3) 10px 10px, rgba(101, 76, 163, 0.2) 15px 15px, rgba(101, 76, 163, 0.1) 20px 20px, rgba(101, 76, 163, 0.0) 25px 25px;
+                    // box-shadow: c.$black-secondary 0px 0px 0px 1px;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+            }
+
+            .features-right {
+                align-self: start;
+                // @include m.troubleshoot;
+                color: c.$white-primary;
+                @include m.flex(column, false, flex-start, flex-start);
+
+                h2 {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    padding-bottom: 1.4rem;
+                }
+
+                .features-description {
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                    color: c.$white-secondary;
+                    padding-bottom: 2.5rem;
+                }
+
+                .features-container {
+                    @include m.flex(false, wrap, false, false);
+                    gap: 2rem;
+
+                    .feature-container {
+                        width: 45%;
+                        height: 100%;
+
+                        h3 {
+                            font-size: 1.2rem;
+                            font-weight: 400;
+                            padding-bottom: 0.7rem;
+                            color: c.$white-primary;
+                        }
+
+                        p {
+                            font-size: 0.9rem;
+                            font-weight: 400;
+                            line-height: 1.3rem;
+                            color: c.$white-secondary;
+                            padding-bottom: 1.5rem;
+                        }
+
+                        a {
+                            width: 60%;
+                            @include m.flex(false, false, false, false);
+                            gap: 0.5rem;
+                            text-decoration: none;
+
+                            i {
+                                color: c.$violet-secondary;
+                                transform: translate(0, 0);
+                                transition: transform 0.2s ease-in-out;
+                            }
+                        }
+
+                        a:hover {
+                            p {
+                                color: c.$white-primary;
+                            }
+
+                            i {
+                                transform: translate(0.5rem, 0);
+                                color: c.$white-primary;
+                            }
+                        }
+                    }
+
+                    .feature-container:hover {
+                        @include m.glitch;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    #install-section {
+        padding: 4rem 15%;
+        width: 100%;
+        height: 100%;
+        @include m.flex(column, false, center, flex-start);
+
+        .section-wrapper-a {
+            padding: 4rem 0;
+            @include m.flex(false, false, space-between, flex-start);
+            width: 100%;
+            gap: 5rem;
+
+            .install-left {
+                @include m.flex(false, false, flex-start, center);
+                width: 100%;
+
+                #video {
+                    width: 45rem;
+                    height: 30rem;
+                    border-radius: 1rem;
+                    //box-shadow: rgba(169, 161, 225, 0.4) -5px -5px, rgba(101, 76, 163, 0.3) -10px -10px, rgba(101, 76, 163, 0.2) -15px -15px, rgba(101, 76, 163, 0.1) -20px -20px, rgba(101, 76, 163, 0.0) -25px -25px;
+                    box-shadow: rgba(101, 76, 163, 0.4) -5px -5px, rgba(101, 76, 163, 0.3) -10px -10px, rgba(101, 76, 163, 0.2) -15px -15px, rgba(101, 76, 163, 0.1) -20px -20px, rgba(101, 76, 163, 0.0) -25px -25px;
+                }
+            }
+
+            .install-right {
+                align-self: start;
+                // @include m.troubleshoot;
+                color: c.$white-primary;
+                @include m.flex(column, false, flex-start, flex-start);
+
+                h2 {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    // padding-bottom: 1.4rem;
+                }
+
+                ul>li {
+                    @include m.flex(false, false, false, center);
+                    gap: 1rem;
+                    color: c.$white-secondary;
+                    padding: 0.5rem 0;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+
+                    i {
+                        color: c.$violet-secondary;
+                    }
+                }
+
+                ul>li:hover {
+                    @include m.glitch;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    line-height: 1.5rem;
+                    color: c.$white-secondary;
+                    padding: 1.4rem 0;
+                    font-weight: 400;
+                }
+
+                .code-container {
+                    @include m.flex(false, false, space-between, flex-start);
+                    background: c.$black-secondary;
+                    width: 100%;
+                    margin-top: 0.8rem;
+                    padding: 1.4rem;
+                    color: gray;
+                    border-radius: 0.5rem;
+                    font-family: monospace;
+                    font-size: 0.9rem;
+
+                    i {
+                        color: c.$white-secondary;
+                    }
+                }
+            }
+        }
+
+        .section-wrapper-b {
+            //@include m.troubleshoot;
+            @include m.flex(column, false, center, center);
+            width: 100%;
+            padding: 4rem 0;
+
+            p {
+                color: c.$white-primary;
+                font-size: 1.6rem;
+                padding-bottom: 4rem;
+                text-align: center;
+                line-height: 2rem;
+            }
+
+            .list-company {
+                @include m.flex(false, wrap, space-between, center);
+                @include m.glitch;
+                width: 100%;
+
+                li {
+                    @include m.flex(false, false, space-between, center);
+                    gap: 1rem;
+                    color: c.$white-secondary;
+
+                    span {
+                        font-size: 1.2rem;
+                    }
+
+                    i {
+                        --ggs: 1em;
+                    }
+                }
+            }
+
+            .top {
+                padding-bottom: 2rem;
+            }
+        }
+    }
+
+    #contact-section {
+        height: 100%;
+        padding: 8rem 15%;
+        @include m.flex(column, false, center, center);
+        // @include m.troubleshoot;
+
+        #form-container {
+            padding: 6rem 0;
+            width: 100%;
+            @include m.flex(column, false, center, space-between);
+            // @include m.troubleshoot;
+            text-align: center;
+
+            h2 {
+                font-size: 14rem;
+                font-weight: 500;
+            }
+
+            h3 {
+                color: c.$white-primary;
+                font-size: 3rem;
+                font-weight: 400;
+                padding-bottom: 1rem;
+            }
+
+            .form-description {
+                color: c.$white-secondary;
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 1.8rem;
+                padding-bottom: 1.5rem;
+            }
+
+            #form {
+                @include m.flex(false, false, center, center);
+                gap: 1rem;
+
+                #email {
+                    width: 14rem;
+                    height: 1.5rem;
+                    font-family: "prompt", monospace;
+                    padding: 0 0.4rem;
+                }
+
+                #submit {
+                    justify-self: flex-end;
+                    color: c.$white-primary;
+                    font-size: 1rem;
+                    border: 2px solid c.$violet-secondary;
+                    border-radius: 20px;
+                    padding: 2px 20px;
+                    text-align: center;
+                    background: c.$black-secondary;
+                    width: 7rem;
+                    height: 2.2rem;
+                    font-family: "prompt";
+                    box-shadow: rgba(101, 76, 163, 0.4) 0px 5px, rgba(101, 76, 163, 0.3) 0px 10px, rgba(101, 76, 163, 0.2) 0px 15px, rgba(101, 76, 163, 0.1) 0px 20px, rgba(101, 76, 163, 0.0) 0px 25px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+#footer {
+    @include m.flex(false, false, center, center);
+    background: c.$violet-secondary;
+    color: c.$white-secondary;
+    height: 2.2rem;
+    box-shadow: rgba(101, 76, 163, 0.4) 0px -5px, rgba(101, 76, 163, 0.3) 0px -10px, rgba(101, 76, 163, 0.2) 0px -15px, rgba(101, 76, 163, 0.1) 0px -20px, rgba(101, 76, 163, 0.0) 0px -25px;
+}

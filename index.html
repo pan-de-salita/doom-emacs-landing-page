@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./styles.css" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://css.gg/css" rel="stylesheet" />
+    </head>
+    <body>
+        <header id="header">
+            <!-- navbar -->
+            <div id="nav-wrapper">
+                <a id="logo-container" href="#hero-section">
+                    <!-- <img id="header-img" alt="doom emacs logo" src="./doom-logo.png"/> -->
+                    <span id="doom-icon" glitch="👾">👾</span>
+                </a>
+                <nav id="nav-bar">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#design-section">design</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#features-section">features</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#install-section">install</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#contact-section">newsletter</a>
+                        </li>
+                        <!-- <button type="button" class="button"> -->
+                            <!--     <span data-text="yes please" >complain</span> -->
+                            <!-- </button> -->
+                    </ul>
+                </nav>
+            </div>
+            <!-- hero section -->
+            <section id="hero-section">
+                <div id="header-img"></div>
+                <div id="hero-text">
+                    <h1>emacs, but e<span>vi</span>l</h1>
+                    <p><span id="doom-emacs">doom emacs</span> --- made for the stubborn martian hacker<span class="cursor">_</span></p>
+                    <button  type="button" class="button install">
+                        <span data-text="install" >tempted?</span>
+                    </button>
+                </div>
+            </section>
+        </header>
+
+        <main id="main">
+            <!-- design section -->
+            <section id="design-section">
+                <div id="grid-description">
+                    <h2>designed with <s>frustration</s> love ❤️</h2>
+                    <p class="primary-description">doom is a modern vim-based development tool built on top of gnu emacs, <br/>  built on top of your hopes, built on top of the author's dreams.</p>
+                    <!-- <p class="secondary-description">doom doesn't discriminate between:</p> -->
+                    <!-- <div class="icon-container"> -->
+                        <!--     <i class="gg-smile-upside"></i> -->
+                        <!--     <i class="gg-smile-sad"></i> -->
+                        <!-- </div> -->
+                    <div class="button-container">
+                        <button type="button" class="button install">
+                            <span data-text="lorem" >documentation</span>
+                        </button>
+                        <button type="button" class="button install">
+                            <span data-text="impsum">licence</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="grid-container">
+                    <div id="grid-one" class="grid big">
+                        <div class="animated-border"></div>
+                        <div class="grid-content">
+                            <div class="design-img" glitch="┬─┬ノ(º_ºノ)"> ┻━┻ ︵ \(°□°\)</div>
+                            <h3 class="design-mantra">an emacs for the tired and true <br/> vimmer (and emacsian)</h3>
+                            <p class="design-description">
+                                a configuration framework for those who want less framework in their frameworks and a modicum of stability (and reproducibility) from their package manager.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="grid-two" class="grid small">
+                        <div class="animated-border"></div>
+                        <div class="grid-content">
+                            <div class="design-img"><i class="gg-list-tree"></i></div>
+                            <h3 class="design-mantra" glitch="gotta go fast">gotta go fast</h3>
+                            <p class="design-description">
+                                doom prioritizes startup and runtime performance. everything else is on you.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="grid-three" class="grid small">
+                        <div class="animated-border"></div>
+                        <div class="grid-content">
+                            <div class="design-img"><i class="gg-collage"></i></div>
+                            <h3 class="design-mantra" glitch="close to metal">close to metal</h3>
+                            <p class="design-description">
+                                if a lisp is a lisp is a lisp, the difference between ux and internals is moot.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="grid-four" class="grid small">
+                        <div class="animated-border"></div>
+                        <div class="grid-content">
+                            <div class="design-img"><i class="gg-yinyang"></i></div>
+                            <h3 class="design-mantra" glitch="opinionated by not stubborn">opinionated, but <br/> not stubborn</h3>
+                            <p class="design-description">
+                                doom plays nice, whether <code>hjkl</code>, <code>c-bnpf</code>, arrow keys, or not.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="grid-five" class="grid small">
+                        <div class="animated-border"></div>
+                        <div class="grid-content">
+                            <div class="design-img"><i class="gg-smile-neutral"></i></div>
+                            <h3 class="design-mantra" glitch="your system, your rules">your system, <br/>  your rules</h3>
+                            <p class="design-description">
+                                you, the user, know better. (at least, doom hopes so. (doom really does.))
+                            </p>
+                        </div>
+                    </div>
+                    <div id="grid-six" class="grid mid">
+                        <div class="animated-border"></div>
+                        <div class="grid-content">
+                            <div class="design-img"><i class="gg-dark-mode"></i></div>
+                            <div class="text-wrapper">
+                                <h3 class="design-mantra">come to the dark side. <br/> we have <span glitch="cookies">cookies</span>.</h3>
+                                <p class="design-description">
+                                    chocolate chip --- dark chocolate chip<span class="cursor">_</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small empty-grid">
+                        <i class="gg-eye-alt"></i>
+                    </div>
+                    <div class="small empty-grid">
+                        <i class="gg-eye"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- features  -->
+            <section id="features-section">
+                <div class="section-wrapper-a">
+                    <div class="features-left">
+                        <nav class="features-nav">
+                            <ul>
+                                <li>
+                                    <button id="demo">package manager</button>
+                                </li>
+                                <li>
+                                    <button>doom doctor</button>
+                                </li>
+                                <li>
+                                    <button>modelines</button>
+                                </li>
+                                <li>
+                                    <button>evil-mode</button>
+                                </li>
+                                <li>
+                                    <button>org-mode</button>
+                                </li>
+                                <li>
+                                    <button>lsp-mode</button>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="features-images">
+                            <!-- <img id="pre-packaged" alt="init.el and config.el" src="pre-packaged.png"/> -->
+                            <!-- <img id="easily-debugged" alt="doom sync and doom doctor" src="utilities.png"/> -->
+                            <img id="modelines" alt="just a screenshot of what i have open" src="demo.png"/>
+                        </div>
+                    </div>
+
+                    <div class="features-right">
+                        <h2>there&#8217s a <s>feature</s> mode for that</h2>
+                        <p class="features-description">
+                            doom takes the best of vim and injects it into emacs, making the beloved extensible and self-documenting real-time display editor even better<span class="cursor">_</span>
+                        </p>
+                        <div class="features-container">
+                            <div class="feature-container">
+                                <h3 glitch="package manager">package manager</h3>
+                                <p>a declarative package management system  with a command line interface.</p>
+                                <a href="">
+                                    <p>explore more</p>
+                                    <i class="gg-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="feature-container">
+                                <h3 glitch="doom doctor">doom doctor</h3>
+                                <p>a troubleshooting utility making maintenance of dependencies simple and easy.</p>
+                                <a href="">
+                                    <p>explore more</p>
+                                    <i class="gg-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="feature-container">
+                                <h3 glitch="modelines">modelines</h3>
+                                <p>a spacemacs-esque keybinding scheme, centered on leader and localleader prefix keys.</p>
+                                <a href="">
+                                    <p>explore more</p>
+                                    <i class="gg-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="feature-container">
+                                <h3 glitch="evil mode">evil-mode</h3>
+                                <p>optional vim emulation powered by evil-mode, including ports of popular vim plugins.</p>
+                                <a href="">
+                                    <p>explore more</p>
+                                    <i class="gg-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- install -->
+            <section id="install-section">
+                <div class="section-wrapper-a">
+                    <div class="install-left">
+                        <iframe id="video"  src="https://www.youtube.com/embed/iab2z21cRqA?si=54BG-OHhzvrzPE7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="install-right">
+                        <h2>your installation is <s>my</s> one command</h2>
+                        <p>before getting doom, make sure to have the following:</p>
+                        <ul>
+                            <li>
+                                <i class="gg-shape-hexagon"></i>
+                                <span glitch="git 2.23+">git 2.23+</span>
+                            </li>
+                            <li>
+                                <i class="gg-shape-hexagon"></i>
+                                <span glitch="emacs 27.1–29.1">emacs 27.1–29.1</span>
+                            </li>
+                            <li>
+                                <i class="gg-shape-hexagon"></i>
+                                <span glitch="ripgrep 11.0+">ripgrep 11.0+</span>
+                            </li>
+                            <li>
+                                <i class="gg-shape-hexagon"></i>
+                                <span glitch="gnu find">gnu find</span>
+                            </li>
+                        </ul>
+                        <p>to install doom, enter the following command or follow the instructions in the video on the left<span class="cursor">_</span></p>
+                        <div class="code-container">
+                            <code>git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+                                ~/.config/emacs/bin/doom install</code>
+                            <i class="gg-code-slash"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-wrapper-b">
+                    <p>doom&#8217s so liked, it&#8217s installed by <br/> none of these companies 🤧</p>
+                    <ul class="list-company top">
+                        <li>
+                            <i class="gg-abstract"></i>
+                            <span glitch="abstract">abstract</span>
+                        </li>
+                        <li>
+                            <i class="gg-atlasian"></i>
+                            <span glitch="atlassian">atlassian</span>
+                        </li>
+                        <li>
+                            <i class="gg-brackets"></i>
+                            <span glitch="brackets">brackets</span>
+                        </li>
+                        <li>
+                            <i class="gg-code-climate"></i>
+                            <span glitch="code climate">code climate</span>
+                        </li>
+                        <li>
+                            <i class="gg-designmodo"></i>
+                            <span glitch="designmodo">designmodo</span>
+                        </li>
+                        <li>
+                            <i class="gg-dribbble"></i>
+                            <span glitch="dribble">dribble</span>
+                        </li>
+                    </ul>
+                    <ul class="list-company bottom">
+                        <li>
+                            <i class="gg-figma"></i>
+                            <span glitch="figma">figma</span>
+                        </li>
+                        <li>
+                            <i class="gg-ghost"></i>
+                            <span glitch="ghost">ghost</span>
+                        </li>
+                        <li>
+                            <i class="gg-google"></i>
+                            <span glitch="google">google</span>
+                        </li>
+                        <li>
+                            <i class="gg-linear"></i>
+                            <span glitch="linear">linear</span>
+                        </li>
+                        <li>
+                            <i class="gg-overflow"></i>
+                            <span glitch="overflow">overflow</span>
+                        </li>
+                        <li>
+                            <i class="gg-patreon"></i>
+                            <span glitch="patreon">patreon</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contact-section">
+                <div id="form-container">
+                    <h2>👾</h2>
+                    <h3>want to be doom&#8217s friend?</h3>
+                    <p class="form-description">why not drop your email? doom might send you a message<span class="cursor">_</span></p>
+                    <form id="form" class="form" action="./static-page.html" method="post">
+                        <label id="email-label" class="input-field" for="email">
+                            <input id="email" class="input text-input" name="email" type="email" placeholder="e.g. foo@bar.com" required/>
+                        </label>
+                        <input id="submit" class="input text-input button" type="submit" name="button" value="submit" data-text="submit" required/>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <h4>🄯 2024 no rights reserved. buhay pa pala ako.</h4>
+        </footer>
+    </body>
+</html>
